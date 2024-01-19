@@ -1,0 +1,17 @@
+﻿@model CalcularModel
+@{
+    ViewData["Title"] = "BeeViral - Teste C# ASP.NET MVC - Henrique Figueiredo";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Pergunta 1: Fatorial</h1><br />
+
+
+    <p>Digite um número inteiro não negativo: </p>
+
+    <form asp-controller="Home" asp-action="Calcular" method="post">
+        <input asp-for="Numero" type="number"  id="idNumero" name="Numero" min="0" placeholder="0"/>
+        <button type="submit" class="btn btn-success">Calcular</button>
+    </form>
+
+</div>

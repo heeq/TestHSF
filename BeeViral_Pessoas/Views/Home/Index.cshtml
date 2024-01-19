@@ -1,0 +1,63 @@
+﻿@model IndexModel
+@{
+	ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+	<h1 class="display-4">Pergunta 2 e 3: Pessoas</h1><br />
+
+
+	<a role="button" asp-controller="Home" asp-action="Index" class="btn btn-primary">Gerar Lista de Pessoas</a><br /><br />
+
+	<h3>Lista Geral de pessoas: </h3>
+<table class="table">
+  <thead>
+	<tr>
+	  <th scope="col">Nome</th>
+	  <th scope="col">Idade</th>
+	  <th scope="col">Email</th>
+	</tr>
+  </thead>
+  <tbody>
+	@if (Model != null)
+		{
+			foreach (BeeViral_Pessoas.Util.Pessoa pessoa in Model.pessoas)	
+			{
+				<tr>
+				<td>@pessoa.Nome</td>
+			 	<td>@pessoa.Idade</td>
+			 	<td>@pessoa.Email</td>
+				</tr>
+			}
+		}
+  </tbody>
+</table>
+
+<h3>Lista de pessoas acima de 30 anos: </h3>
+<table class="table">
+  <thead>
+	<tr>
+	  <th scope="col">Nome</th>
+	  <th scope="col">Idade</th>
+	  <th scope="col">Email</th>
+	</tr>
+  </thead>
+  <tbody>
+	@if (Model != null)
+	{
+		foreach (BeeViral_Pessoas.Util.Pessoa pessoa in Model.pessoas)
+		{
+			if (pessoa.Idade > 30)
+				{
+					<tr>
+					<td>@pessoa.Nome</td>
+					<td>@pessoa.Idade</td>
+					<td>@pessoa.Email</td>
+					</tr>
+				}
+		}
+	}
+  </tbody>
+</table>
+
+</div>
