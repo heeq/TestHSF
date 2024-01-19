@@ -32,7 +32,7 @@ namespace BeeViral_Fatorial.Controllers
         [HttpPost]
         public IActionResult Calcular(CalcularModel calcular)
         {
-            int resultado = 1, numero = calcular.Numero;
+            double resultado = 1, numero = calcular.Numero;
 
             if (calcular.Numero >= 1)
             {

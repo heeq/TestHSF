@@ -2,6 +2,6 @@
 {
     public class CalcularModel
     {
-        public int Numero {  get; set; }
+        public double Numero {  get; set; }
     }
 }

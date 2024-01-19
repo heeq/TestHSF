@@ -27,53 +27,29 @@ namespace BeeViral_Pessoas.Controllers
 			_logger = logger;
 		}
 
+		#region [Pages]
 		public IActionResult Index()
 		{
 			if (Pessoas.Count == 0)
 			{
-				Pessoa individuo;
-				Random rnd;
-
-				for (int i = 0; i < 5; i++)
-				{
-					rnd = new Random();
-
-					individuo = new Pessoa();
-					individuo.Nome = _nomes[rnd.Next(0, 16)] + " " + _sobrenomes[rnd.Next(0, 16)];
-					individuo.Idade = rnd.Next(1, 100);
-					individuo.Email = individuo.Nome.Replace(" ", "_") + "@email.com";
-
-					Pessoas.Add(individuo);
-				}
+				AdicionarPessoasAleatorias();
 			}
+
 			ViewBag.Pessoas = Pessoas;
 
 			return View();
 		}
+
 		public IActionResult GerarAleatorio()
 		{
-			Pessoa individuo;
-			Random rnd;
-
 			Pessoas.Clear();
-
-			for (int i = 0; i < 5; i++)
-			{
-				rnd = new Random();
-
-				individuo = new Pessoa();
-				individuo.Nome = _nomes[rnd.Next(0, 16)] + " " + _sobrenomes[rnd.Next(0, 16)];
-				individuo.Idade = rnd.Next(1, 100);
-				individuo.Email = individuo.Nome.Replace(" ", "_") + "@email.com";
-
-				Pessoas.Add(individuo);
-			}
+			AdicionarPessoasAleatorias();
 			ViewBag.Pessoas = Pessoas;
 
 			return RedirectToAction("Index", "Home");
 		}
 
-		public IActionResult Adicionar(string Nome, int Idade, string Email)
+		public IActionResult AdicionarManual(string Nome, int Idade, string Email)
 		{
 			Pessoa individuo = new Pessoa(Nome, Idade, Email);
 			Pessoas.Add(individuo);
@@ -92,5 +68,26 @@ namespace BeeViral_Pessoas.Controllers
 		{
 			return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
 		}
+		#endregion
+
+		#region [Private Methods]
+		private void AdicionarPessoasAleatorias()
+		{
+			Pessoa individuo;
+			Random rnd;
+
+			for (int i = 0; i < 5; i++)
+			{
+				rnd = new Random();
+
+				individuo = new Pessoa();
+				individuo.Nome = _nomes[rnd.Next(0, 16)] + " " + _sobrenomes[rnd.Next(0, 16)];
+				individuo.Idade = rnd.Next(1, 100);
+				individuo.Email = individuo.Nome.Replace(" ", "_") + "@email.com";
+
+				Pessoas.Add(individuo);
+			}
+		}
+		#endregion
 	}
 }
