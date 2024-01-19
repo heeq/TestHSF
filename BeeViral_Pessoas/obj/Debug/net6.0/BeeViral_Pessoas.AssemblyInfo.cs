@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BeeViral_Pessoas")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8723d6cd40432d170667c3b18c49ff731c8ea8db")]
 [assembly: System.Reflection.AssemblyProductAttribute("BeeViral_Pessoas")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BeeViral_Pessoas")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -10,7 +10,7 @@
     <p>Digite um número inteiro não negativo: </p>
 
     <form asp-controller="Home" asp-action="Calcular" method="post">
-        <input asp-for="Numero" type="number"  id="idNumero" name="Numero" min="0" placeholder="0"/>
+        <input asp-for="Numero" type="number"  id="idNumero" name="Numero" required min="0" placeholder="0"/>
         <button type="submit" class="btn btn-success">Calcular</button>
     </form>
 

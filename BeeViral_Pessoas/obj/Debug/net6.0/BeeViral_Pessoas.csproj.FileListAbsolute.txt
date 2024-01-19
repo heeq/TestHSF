@@ -28,3 +28,4 @@ C:\Users\Henrique\source\repos\BeeViral_Testes\BeeViral_Pessoas\obj\Debug\net6.0
 C:\Users\Henrique\source\repos\BeeViral_Testes\BeeViral_Pessoas\obj\Debug\net6.0\BeeViral_Pessoas.pdb
 C:\Users\Henrique\source\repos\BeeViral_Testes\BeeViral_Pessoas\obj\Debug\net6.0\BeeViral_Pessoas.genruntimeconfig.cache
 C:\Users\Henrique\source\repos\BeeViral_Testes\BeeViral_Pessoas\obj\Debug\net6.0\ref\BeeViral_Pessoas.dll
+C:\Users\Henrique\source\repos\BeeViral_Testes\BeeViral_Pessoas\obj\Debug\net6.0\BeeViral_Pessoas.sourcelink.json

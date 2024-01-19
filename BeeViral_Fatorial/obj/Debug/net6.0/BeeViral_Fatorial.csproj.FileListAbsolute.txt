@@ -28,3 +28,4 @@ C:\Users\Henrique\source\repos\BeeViral_Testes\BeeViral_Fatorial\obj\Debug\net6.
 C:\Users\Henrique\source\repos\BeeViral_Testes\BeeViral_Fatorial\obj\Debug\net6.0\BeeViral_Fatorial.pdb
 C:\Users\Henrique\source\repos\BeeViral_Testes\BeeViral_Fatorial\obj\Debug\net6.0\BeeViral_Fatorial.genruntimeconfig.cache
 C:\Users\Henrique\source\repos\BeeViral_Testes\BeeViral_Fatorial\obj\Debug\net6.0\ref\BeeViral_Fatorial.dll
+C:\Users\Henrique\source\repos\BeeViral_Testes\BeeViral_Fatorial\obj\Debug\net6.0\BeeViral_Fatorial.sourcelink.json

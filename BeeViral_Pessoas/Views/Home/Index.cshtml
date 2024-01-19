@@ -1,13 +1,28 @@
-﻿@model IndexModel
+﻿@model Pessoa
 @{
-	ViewData["Title"] = "Home Page";
+	List<Pessoa> lista = (List<Pessoa>)ViewBag.Pessoas;
 }
 
 <div class="text-center">
 	<h1 class="display-4">Pergunta 2 e 3: Pessoas</h1><br />
 
 
-	<a role="button" asp-controller="Home" asp-action="Index" class="btn btn-primary">Gerar Lista de Pessoas</a><br /><br />
+	<a role="button" asp-controller="Home" asp-action="GerarAleatorio" class="btn btn-primary">Gerar Lista Aleatória de Pessoas</a><br /><br />
+
+	<div class="box">
+	<form  asp-controller="Home" asp-action="Adicionar" method="POST" orientation="Horizontal" >
+		<label>Nome Completo:</label><br>
+		<input required type="text" id="Nome" name="Nome" placeholder="João da Silva"><br />
+
+		<label>Idade:</label><br>
+		<input required type="number" id="Idade" name="Idade" placeholder="31"><br />
+
+		<label>Email:</label><br>
+		<input required min="0" type="email" id="Email" name="Email" placeholder="silvajoao@email.com"><br /><br />
+
+		<button type="submit" class="btn btn-success">Adicionar</button>
+	</form> 
+	</div>
 
 	<h3>Lista Geral de pessoas: </h3>
 <table class="table">
@@ -19,17 +34,14 @@
 	</tr>
   </thead>
   <tbody>
-	@if (Model != null)
-		{
-			foreach (BeeViral_Pessoas.Util.Pessoa pessoa in Model.pessoas)	
-			{
-				<tr>
-				<td>@pessoa.Nome</td>
-			 	<td>@pessoa.Idade</td>
-			 	<td>@pessoa.Email</td>
-				</tr>
-			}
-		}
+	  @foreach (var item in lista)
+	  {
+		<tr>
+		<td>@item.Nome</td>
+		<td>@item.Idade</td>
+		<td>@item.Email</td>
+		</tr>
+	   }
   </tbody>
 </table>
 
@@ -43,18 +55,15 @@
 	</tr>
   </thead>
   <tbody>
-	@if (Model != null)
+	@foreach (var item in lista)
 	{
-		foreach (BeeViral_Pessoas.Util.Pessoa pessoa in Model.pessoas)
+		if (item.Idade > 30)
 		{
-			if (pessoa.Idade > 30)
-				{
-					<tr>
-					<td>@pessoa.Nome</td>
-					<td>@pessoa.Idade</td>
-					<td>@pessoa.Email</td>
-					</tr>
-				}
+			<tr>
+			<td>@item.Nome</td>
+			<td>@item.Idade</td>
+			<td>@item.Email</td>
+			</tr>
 		}
 	}
   </tbody>

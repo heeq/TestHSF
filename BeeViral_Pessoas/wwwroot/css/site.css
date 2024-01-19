@@ -16,3 +16,9 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+.box {
+    border: 1px solid black;
+    margin: 50;
+    padding: 20;
+}
